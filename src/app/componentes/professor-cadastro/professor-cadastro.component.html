@@ -1,0 +1,67 @@
+<div class="main-container">
+  <div class="container">
+    <div class="form-header">
+      <h2>Cadastro de Professor</h2>
+      <div class="separator-bar"></div>
+    </div>
+
+    <mat-form-field class="custom-form-field">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="nome">
+    </mat-form-field>
+
+    <mat-form-field class="custom-form-field">
+      <mat-label>CPF</mat-label>
+      <input matInput [(ngModel)]="cpf">
+    </mat-form-field>
+
+    <mat-form-field class="custom-form-field">
+      <mat-label>Tipo de Contratação</mat-label>
+      <mat-select [(ngModel)]="tipo_horario">
+        <mat-option *ngFor="let tipo of tipoHorarioContratacao" [value]="tipo">
+          {{ tipo }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="custom-form-field" *ngIf="tipo_horario === 'Horista'">
+      <mat-label>Carga Semanal</mat-label>
+      <input matInput type="number" [(ngModel)]="carga_semanal" 
+             min="2" max="40" step="2" [value]="2" (change)="validarCargaSemanalHorista()">
+    </mat-form-field>
+    
+    <mat-form-field class="custom-form-field" *ngIf="tipo_horario === 'Parcial'">
+      <mat-label>Carga Semanal</mat-label>
+      <input matInput type="number" [(ngModel)]="carga_semanal"
+             min="10" max="40" step="10" [value]="10" (change)="validarCargaSemanalParcial()">
+    </mat-form-field>
+    
+    <mat-form-field class="custom-form-field" *ngIf="tipo_horario === 'Integral'">
+      <mat-label>Carga Semanal</mat-label>
+      <input matInput type="number" value="40" [readonly]="true">
+    </mat-form-field>
+
+    <mat-form-field class="custom-form-field">
+      <mat-label>Curso</mat-label>
+      <mat-select [(ngModel)]="curso" (selectionChange)="cursoSelecionado()">
+        <mat-option *ngFor="let cursoDisponivel of cursosDisponiveis" [value]="cursoDisponivel">
+          {{ cursoDisponivel.curso_nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="custom-form-field">
+      <mat-label>Disciplinas</mat-label>
+      <mat-select [(ngModel)]="disciplinasSelecionadas" multiple *ngIf="curso" [disabled]="!curso || disciplinasDoCurso.length === 0">
+        <mat-option *ngFor="let disciplinaDisponivel of disciplinasDoCurso" [value]="disciplinaDisponivel">
+          {{ disciplinaDisponivel.disciplina_nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar</button>
+      <button mat-raised-button color="basic" (click)="limparCampos()">Limpar</button>
+    </div>
+  </div>
+</div>

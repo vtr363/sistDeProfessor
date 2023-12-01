@@ -1,0 +1,94 @@
+{
+  "users": [],
+  "usuarios": [],
+  "professores": [
+  ],
+  "cursos": [
+    {
+      "curso_nome": "Análise e Desenvolvimento de Sistemas",
+      "disciplinas": [
+        {
+          "disciplina_nome": "Lógica de Programação",
+          "trimestre": "1",
+          "disciplina_carga": 2,
+          "id": 1
+        },
+        {
+          "disciplina_nome": "Programação 1",
+          "trimestre": "1",
+          "disciplina_carga": 2,
+          "id": 2
+        },
+        {
+          "disciplina_nome": "Programação 2",
+          "trimestre": "1",
+          "disciplina_carga": 2,
+          "id": 3
+        }
+      ],
+      "id": 1
+    },
+    {
+      "curso_nome": "Redes de Computadores",
+      "disciplinas": [
+        {
+          "disciplina_nome": "Introdução a Redes de Computadores",
+          "trimestre": "1",
+          "disciplina_carga": 2,
+          "id": 4
+        },
+        {
+          "disciplina_nome": "Web Security",
+          "trimestre": "1",
+          "disciplina_carga": 2,
+          "id": 5
+        },
+        {
+          "disciplina_nome": "Arquitetura de Computadores",
+          "trimestre": "1",
+          "disciplina_carga": 2,
+          "id": 6
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "disciplinas": [
+    {
+      "disciplina_nome": "Lógica de Programação",
+      "trimestre": "1",
+      "disciplina_carga": 2,
+      "id": 1
+    },
+    {
+      "disciplina_nome": "Programação 1",
+      "trimestre": "1",
+      "disciplina_carga": 2,
+      "id": 2
+    },
+    {
+      "disciplina_nome": "Programação 2",
+      "trimestre": "1",
+      "disciplina_carga": 2,
+      "id": 3
+    },
+    {
+      "disciplina_nome": "Introdução a Redes de Computadores",
+      "trimestre": "1",
+      "disciplina_carga": 2,
+      "id": 4
+    },
+    {
+      "disciplina_nome": "Web Security",
+      "trimestre": "1",
+      "disciplina_carga": 2,
+      "id": 5
+    },
+    {
+      "disciplina_nome": "Arquitetura de Computadores",
+      "trimestre": "1",
+      "disciplina_carga": 2,
+      "id": 6
+    }
+  ]
+}
