@@ -1,0 +1,47 @@
+<div mat-dialog-title>
+    <h1>Disciplina - Formulário</h1>
+  </div>
+  <form [formGroup]="disciplinaForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Nome da Disciplina</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Ex. Lógica de Programação"
+            formControlName="disciplina_nome"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Carga Horária</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="Ex. 2"
+            formControlName="disciplina_carga"
+          />
+        </mat-form-field>
+      </div>
+  
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Curso</mat-label>
+          <mat-select formControlName="cursos">
+            <mat-option *ngFor="let curso of cursos" [value]="curso"
+              >{{ curso.curso_nome }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button color="primary" type="submit">
+        {{ data ? "Atualizar" : "Cadastrar" }}
+      </button>
+  
+      <button mat-raised-button type="button" [mat-dialog-close]="false">
+        Cancelar
+      </button>
+    </div>
+  </form>

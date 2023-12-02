@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 
-import { ProfessorService } from 'src/app/services/usuario.service';
+import { EmployeeService } from 'src/app/services/usuario.service';
 import { CursoService } from 'src/app/services/curso.service';
 import { Curso } from 'src/app/modelos/curso';
 import { Disciplina } from 'src/app/modelos/disciplina';
@@ -37,7 +37,7 @@ export class ProfessorCadastroComponent implements OnInit {
   
 
   constructor(private snackBar: MatSnackBar,
-              private professorService: ProfessorService, 
+              private professorService: EmployeeService, 
               private cursoService: CursoService) {}
 
   ngOnInit() {

@@ -1,0 +1,115 @@
+<mat-toolbar color="primary">
+  <span>Gerenciamento de Professores</span>
+  <span class="example-spacer-button"></span>
+  <button mat-button routerLink="/home">Início</button>
+  <button mat-button routerLink="/admin/professor">Professor</button>
+  <button mat-button routerLink="/admin/disciplina">Disciplina</button>
+  <button mat-button routerLink="/admin/curso">Curso</button>
+  <button mat-button routerLink="/admin/trimestre">Trimestre</button>
+  <span class="example-spacer-button"></span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button (click)="abrirAddEditProfForm()">
+    + Professor
+  </button>
+  <button
+    mat-raised-button
+    (click)="abrirAddEditDiscForm()"
+    style="margin-left: 5px"
+  >
+    + Disciplina
+  </button>
+  <button
+    mat-raised-button
+    (click)="abrirAddEditCursForm()"
+    style="margin-left: 5px"
+  >
+    + Curso
+  </button>
+</mat-toolbar>
+
+<div class="main-body">
+  <mat-form-field class="p-3">
+    <mat-label>Filtrar por Nome</mat-label>
+    <input
+      matInput
+      (keyup)="aplicarFiltro($event)"
+      placeholder="Ex. Redes"
+      #input
+    />
+  </mat-form-field>
+
+  <mat-form-field class="p-3">
+    <mat-label>Filtrar por Curso</mat-label>
+    <input
+      matInput
+      [formControl]="filtroCurso"
+      (keyup)="aplicarFiltroCurso()"
+      placeholder="Ex. ADS"
+    />
+  </mat-form-field>
+  
+
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="disciplina_nome">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+        <td mat-cell *matCellDef="let row">{{ row.disciplina_nome }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="disciplina_carga">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Carga Horária</th>
+        <td mat-cell *matCellDef="let row">{{ row.disciplina_carga }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cursos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Curso</th>
+        <td mat-cell *matCellDef="let row">{{ row.cursos.curso_nome }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="trimestre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Trimestre</th>
+        <td mat-cell *matCellDef="let row">{{ row.cursos.trimestre }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+        <td mat-cell *matCellDef="let row">
+          <mat-select placeholder="Selecione uma ação" [(ngModel)]="profSelecionado">
+            <mat-option *ngFor="let professor of professores if row.disciplina_nome in professor.disciplina" [value]="professor">
+              {{ professor.nome }}
+            </mat-option>
+          </mat-select>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          Nenhuma disciplina com nome: "{{ input.value }}" foi encontrada.
+        </td>
+      </tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page of users"
+    ></mat-paginator>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="row fixed-bottom">
+  <div class="container-fluid text-center text-light bg-dark p-3">
+    <p class="mb-0">
+      © 2023 Todos os direitos reservados - Gerenciamento de Professores
+    </p>
+  </div>
+</div>
