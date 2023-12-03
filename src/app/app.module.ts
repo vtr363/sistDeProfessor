@@ -15,13 +15,27 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule }  from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CursoService } from './services/curso.service';
+import { ViewCoordenadorComponent } from './componentes/view/view-coordenador/view-coordenador.component';
+import { EmpAddEditComponent } from './componentes/forms/emp-add-edit/emp-add-edit.component';
+import { CursAddEditComponent } from './componentes/forms/curs-add-edit/curs-add-edit.component';
+import { DisAddEditComponent } from './componentes/forms/dis-add-edit/dis-add-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ViewCoordenadorComponent,
+    EmpAddEditComponent,
+    CursAddEditComponent,
+    DisAddEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +53,11 @@ import { CursoService } from './services/curso.service';
     MatFormFieldModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule
   ],
   providers: [CursoService],
   bootstrap: [AppComponent]

@@ -12,6 +12,19 @@ export class CursoService {
   constructor(private http: HttpClient) {}
 
   obterCursos(): Observable<Curso[]> {
-    return this.http.get<Curso[]>(this.apiUrl);
+    return this.http.get<Curso[]>(this.apiUrl); 
   }
+
+  atualizarCurso(id: number, data: Curso): Observable<any> {
+    return this.http.put<Curso>(`${this.apiUrl}/${id}`, data);
+  }
+
+  adicionarCurso(data: Curso): Observable<any> {
+    return this.http.post<Curso>(this.apiUrl, data);
+  }
+
+  deletarCurso(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
 }
