@@ -5,7 +5,8 @@
       "name": "Professor 1",
       "email": "professor1@example.com",
       "password": "password1"
-    },{
+    },
+    {
       "id": 2,
       "name": "Professor 2",
       "email": "professor2@example.com",
@@ -41,6 +42,17 @@
     }
   ],
   "professores": [
+    {
+      "nome": "vtr",
+      "cpf": "12345678998",
+      "tipo_horario": "Horista",
+      "carga_semanal": 40,
+      "curso": "Análise e Desenvolvimento de Sistemas",
+      "disciplinas": [
+        "Programação 2"
+      ],
+      "id": 1
+    }
   ],
   "cursos": [
     {

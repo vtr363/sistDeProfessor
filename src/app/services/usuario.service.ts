@@ -12,7 +12,7 @@ export class EmployeeService {
   private apiUrl = 'http://localhost:3000/usuarios'
 
   adicionarProfessor(data: any): Observable<any> {
-    return this._http.post(this.apiUrl, data);
+    return this._http.post('http://localhost:3000/professores', data);
   }
 
   atualizarProfessor(id: number, data: any): Observable<any> {
