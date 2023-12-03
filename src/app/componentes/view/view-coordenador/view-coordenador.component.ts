@@ -1,7 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CursAddEditComponent } from '../../forms/curs-add-edit/curs-add-edit.component';
-import { DisAddEditComponent } from '../../forms/dis-add-edit/dis-add-edit.component';
-import { EmpAddEditComponent } from '../../forms/emp-add-edit/emp-add-edit.component';
 import { Usuario } from 'src/app/modelos/usuario';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -63,36 +60,6 @@ export class ViewCoordenadorComponent implements OnInit {
     // You can perform any further actions or logic here
   }
 
-  abrirAddEditProfForm() {
-    const dialogRef = this._dialog.open(EmpAddEditComponent);
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if (val) {
-          this.getDisciplinaList(this.cursoSelecionado);
-        }
-      },
-    });
-  }
-
-  abrirAddEditDiscForm() {
-    const dialogRef = this._dialog.open(DisAddEditComponent);
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if (val) {
-        }
-      },
-    });
-  }
-
-  abrirAddEditCursForm() {
-    const dialogRef = this._dialog.open(CursAddEditComponent);
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if (val) {
-        }
-      },
-    });
-  }
 
   getCursoList() {
     this._cursoService.obterCursos().subscribe({
@@ -149,20 +116,6 @@ export class ViewCoordenadorComponent implements OnInit {
         this.getDisciplinaList(this.cursoSelecionado);
       },
       error: console.log,
-    });
-  }
-
-  abrirEditForm(data: any) {
-    const dialogRef = this._dialog.open(DisAddEditComponent, {
-      data,
-    });
-
-    dialogRef.afterClosed().subscribe({
-      next: (val) => {
-        if (val) {
-          this.getDisciplinaList(this.cursoSelecionado);
-        }
-      },
     });
   }
 }

@@ -25,17 +25,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { CursoService } from './services/curso.service';
 import { ViewCoordenadorComponent } from './componentes/view/view-coordenador/view-coordenador.component';
-import { EmpAddEditComponent } from './componentes/forms/emp-add-edit/emp-add-edit.component';
-import { CursAddEditComponent } from './componentes/forms/curs-add-edit/curs-add-edit.component';
-import { DisAddEditComponent } from './componentes/forms/dis-add-edit/dis-add-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewCoordenadorComponent,
-    EmpAddEditComponent,
-    CursAddEditComponent,
-    DisAddEditComponent,
   ],
   imports: [
     BrowserModule,

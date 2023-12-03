@@ -2,29 +2,6 @@
   <span>Gerenciamento de Professores</span>
   <span class="example-spacer-button"></span>
   <button mat-button routerLink="/home">Início</button>
-  <button mat-button routerLink="/admin/professor">Professor</button>
-  <button mat-button routerLink="/admin/disciplina">Disciplina</button>
-  <button mat-button routerLink="/admin/curso">Curso</button>
-  <button mat-button routerLink="/admin/trimestre">Trimestre</button>
-  <span class="example-spacer-button"></span>
-  <span class="example-spacer"></span>
-  <button mat-raised-button (click)="abrirAddEditProfForm()">
-    + Professor
-  </button>
-  <button
-    mat-raised-button
-    (click)="abrirAddEditDiscForm()"
-    style="margin-left: 5px"
-  >
-    + Disciplina
-  </button>
-  <button
-    mat-raised-button
-    (click)="abrirAddEditCursForm()"
-    style="margin-left: 5px"
-  >
-    + Curso
-  </button>
 </mat-toolbar>
 
 <div class="main-body">
@@ -99,14 +76,5 @@
       [pageSizeOptions]="[5, 10, 25, 100]"
       aria-label="Select page of users"
     ></mat-paginator>
-  </div>
-</div>
-
-<!-- Footer -->
-<div class="row fixed-bottom">
-  <div class="container-fluid text-center text-light bg-dark p-3">
-    <p class="mb-0">
-      © 2023 Todos os direitos reservados - Gerenciamento de Professores
-    </p>
   </div>
 </div>
