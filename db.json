@@ -1,6 +1,45 @@
 {
-  "users": [],
-  "usuarios": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "Professor 1",
+      "email": "professor1@example.com",
+      "password": "password1"
+    },{
+      "id": 2,
+      "name": "Professor 2",
+      "email": "professor2@example.com",
+      "password": "password2"
+    }
+  ],
+  "usuarios": [
+    {
+      "user": {
+        "id": 1,
+        "name": "Professor 1",
+        "email": "professor1@example.com",
+        "password": "password1"
+      },
+      "cpf": "123.456.789-01",
+      "tipo_horario": "Integral",
+      "carga_semanal": 40,
+      "curso": [],
+      "tipo": "Professor"
+    },
+    {
+      "user": {
+        "id": 2,
+        "name": "Professor 2",
+        "email": "professor2@example.com",
+        "password": "password2"
+      },
+      "cpf": "987.654.321-00",
+      "tipo_horario": "Parcial",
+      "carga_semanal": 20,
+      "curso": [],
+      "tipo": "Professor"
+    }
+  ],
   "professores": [
   ],
   "cursos": [

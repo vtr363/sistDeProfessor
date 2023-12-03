@@ -12,7 +12,7 @@ export class CursoService {
   constructor(private http: HttpClient) {}
 
   obterCursos(): Observable<Curso[]> {
-    return this.http.get<Curso[]>(this.apiUrl);
+    return this.http.get<Curso[]>(this.apiUrl); 
   }
 
   atualizarCurso(id: number, data: Curso): Observable<any> {

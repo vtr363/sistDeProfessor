@@ -9,20 +9,22 @@ import { Usuario } from '../modelos/usuario';
 export class EmployeeService {
   constructor(private _http: HttpClient) {}
 
+  private apiUrl = 'http://localhost:3000/usuarios'
+
   adicionarProfessor(data: any): Observable<any> {
-    return this._http.post('http://localhost:3000/professores', data);
+    return this._http.post(this.apiUrl, data);
   }
 
   atualizarProfessor(id: number, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3000/professores/${id}`, data);
+    return this._http.put(`${this.apiUrl}/${id}`, data);
   }
 
   getProfessorList(): Observable<any> {
-    return this._http.get('http://localhost:3000/professores');
+    return this._http.get(this.apiUrl);
   }
 
   deletarProfessor(id: number): Observable<any> {
-    return this._http.delete(`http://localhost:3000/professores/${id}`);
+    return this._http.delete(`${this.apiUrl}/${id}`);
   }
 
 }

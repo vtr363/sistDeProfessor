@@ -19,7 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatInputModule } from '@angular/material/input';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -56,7 +56,8 @@ import { DisAddEditComponent } from './componentes/forms/dis-add-edit/dis-add-ed
     MatToolbarModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule
   ],
   providers: [CursoService],
   bootstrap: [AppComponent]
